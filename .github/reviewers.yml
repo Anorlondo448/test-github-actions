@@ -1,0 +1,13 @@
+addReviewers: true
+addAssignees: author
+
+reviewers:
+  - Anorlondo448
+
+numberOfReviewers: 1
+
+useAssigneeGroups: false
+
+skipKeywords:
+  - wip
+  - WIP
