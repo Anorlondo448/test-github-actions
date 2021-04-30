@@ -6,11 +6,11 @@ on:
 
 jobs:
   auto-request-review:
-    # if: contains(github.event.pull_request.requested_reviewers.*.name, '')
+    if: ${{ toJson(github.event.pull_request.requested_reviewers) == '[]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Assign reviewers
         uses: kentaro-m/auto-assign-action@v1.1.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           configuration-path: ".github/reviewers.yml"
