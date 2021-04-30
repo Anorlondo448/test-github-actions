@@ -6,7 +6,7 @@ on:
 
 jobs:
   auto-request-review:
-    if: github.event.pull_request.requested_reviewers == []
+    if: ${{ toJson(github.event.pull_request.requested_reviewers) == '[]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Assign reviewers
